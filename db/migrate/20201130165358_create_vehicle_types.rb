@@ -1,7 +1,7 @@
 class CreateVehicleTypes < ActiveRecord::Migration[6.0]
   def change
     create_table :vehicle_types do |t|
-      t.string :type
+      t.string :name
 
       t.timestamps
     end
