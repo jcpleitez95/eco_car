@@ -1,0 +1,23 @@
+<h1>Account Overview</h1>
+
+<p>Username:<%= @user.username %></p>
+
+<p>You have <%= @user.favorites.count %> favorited cars</p>
+<% avg_eco_score = 0 if @user.favorites.count == 0 %>
+<% avg_eco_score = (@user.favorites.sum {|f| f.eco_score} / @user.favorites.count) if  @user.favorites.count > 0%>
+<li> The average EcoScore of your favorites is <%= avg_eco_score.to_f.round(2) %></li>
+<br>
+<%= button_to "My Favorites", favorites_path(@user.favorites) %>
+
+<br>
+
+<h2> Change your password </h2>
+<!-- form -->
+
+<br>
+
+<!-- use coookies to count delete button -->
+<h2>Danger zone</h2>
+<p> Click this button 5 times to delete your account </p>
+<%= button_to "Delete My Account", user_path(@user), method: :delete %>
+

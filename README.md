@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Known bugs / improvements:
+
+* User/show delete button 
+
+* Cookies for favorite page by user
+
+

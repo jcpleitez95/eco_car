@@ -7,7 +7,6 @@ class BrandsController < ApplicationController
     end
 
     def show
-        get_brand
     end
 
     private 

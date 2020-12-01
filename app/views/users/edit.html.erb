@@ -1,0 +1,19 @@
+<h1>Edit User!!</h1>
+
+<%= form_for @user do |f| %>
+    <% if flash[:my_errors] %>
+        <% flash[:my_errors].each do |error| %>
+        <li><%= error %></li>
+        <% end%>
+    <% end %>
+
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <br>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>
