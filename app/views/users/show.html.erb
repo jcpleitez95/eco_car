@@ -4,10 +4,10 @@
 
 <p>You have <%= @user.favorites.count %> favorited cars</p>
 <% avg_eco_score = 0 if @user.favorites.count == 0 %>
-<% avg_eco_score = (@user.favorites.sum {|f| f.eco_score} / @user.favorites.count) if  @user.favorites.count > 0%>
+<% avg_eco_score = (@user.models.sum {|m| m.eco_score} / @user.favorites.count) if  @user.favorites.count > 0%>
 <li> The average EcoScore of your favorites is <%= avg_eco_score.to_f.round(2) %></li>
 <br>
-<%= button_to "My Favorites", favorites_path(@user.favorites) %>
+<%= button_to "My Favorites", favorites_path, method: :get%>
 
 <br>
 
@@ -15,6 +15,9 @@
 <!-- form -->
 
 <br>
+
+<h2> Logout </h2>
+<%= button_to "Logout", "/sessions/logout", method: :delete %>
 
 <!-- use coookies to count delete button -->
 <h2>Danger zone</h2>

@@ -1,11 +1,22 @@
 <h1><%= @model.name %> Overview</h1>
 <h4><%= @model.vehicle_type.name %></h4>
 
-<li>This model will cost you: $<%= @model.price.to_f.round(2) %></li>
+<li>This model will cost you: <%= number_to_currency(@model.price, precision: 0) %></li>
 
 <br>
 
 <li>This model has an EcoScore of <%= @model.eco_score %></li>
+
+<br>
+
+
+<% if @current_user.favorites.find {|f| f.model_id == @model.id} %>
+    <p> This model is in your favorites 100 </p>
+<% else %>
+    <%= button_to "Add to My Favorites", add_favorite_path(@model), method: :put, class: "btn btn-info" %>
+<%end%>
+
+<!-- button_to "Add to My Favorites", new_favorite_path, redirect_to model_path(@model) -->
 
 <br>
 

@@ -180,6 +180,7 @@ end
 #     end
 # end
 
-User.create(username: "JC", password: "123")
+# User.create(username: "JC", password_digest: "123")
+# User.create(username: "BO")
 
 

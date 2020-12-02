@@ -1,0 +1,12 @@
+<h1>Your Favorites</h1>
+
+<% @favorites.each do |favorite| %>
+    <li><%= link_to favorite.model.name, model_path(favorite.model) %>
+    <br>
+    <%= button_to "Delete Favorite", favorite_path(favorite), method: :delete %>
+    </li>
+<% end %>
+
+<!-- #form_for @favorites do |f| 
+    #f.collection_select :favorite_id, @favorites, :id, :name, prompt: true
+#end -->

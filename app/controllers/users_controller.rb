@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    skip_before_action :authorized, only: [:new, :create]
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
     def show
@@ -13,7 +13,9 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
 
         if @user.valid?
-            redirect_to user_path(@user)
+            cookies[:user_id] = @user.id
+            cookies[:delete_count] = "0"
+            redirect_to brands_path
         else
             flash[:my_errors] = @user.errors.full_messages
             redirect_to new_user_path(@user)
@@ -35,8 +37,11 @@ class UsersController < ApplicationController
     end
     
     def destroy
-        @user.destroy
-        #redirect_to login?
+        cookies[:delete_count] = (cookies[:delete_count].to_i + 1).to_s
+        if cookies[:delete_count] == "3"
+            @current_user.destroy
+            redirect_to new_user_path
+        end
     end
 
     private

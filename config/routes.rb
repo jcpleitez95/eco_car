@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  resources :favorites
+
+  # boiler plate routes
+  resources :favorites, only: [:show, :index, :destroy]
   resources :users
   resources :models
   resources :vehicle_types
   resources :brands
 
-  # destroy :
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # custom routes
+  delete "/sessions/logout", to: 'sessions#logout', as: 'logout'
+  get "/sessions/new", to: 'sessions#new', as: 'new_login'
+  post '/sessions/login', to: 'sessions#login', as: 'login'
+  # post "model/:id/add", to: 'models#add_favorite', as: 'add_favorite'  
+  put "favorites/:id/add", to: 'favorites#add', as: 'add_favorite'  
+
+
 end
