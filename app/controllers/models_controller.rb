@@ -1,16 +1,13 @@
 class ModelsController < ApplicationController
-    before_action :get_model, only: [:show, :add_favorite]
+    before_action :get_model, only: [:show]
+    skip_before_action :authorized, only: [:show]
 
-    def index 
-        @models = Model.all 
-    end
+    # def index 
+    #     @models = Model.all 
+    # end
 
     def show
     end
-
-    # def add_favorite
-    #     @current_user.favorites << Favorite.create(model_id: @model.id)
-    # end
 
     private 
 

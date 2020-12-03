@@ -1,5 +1,11 @@
-<h1>The Hottest Brands You Know and Love!</h1>
 
-<% @brands.each do |brand| %>
-    <li><%= link_to brand.name, brand_path(brand) %></li>
-<%end%>
+<div class='index-container'>
+    <% @brands.each do |brand| %>
+        <div class='index-tile'>
+            <div class='outer-circle'>
+                <h2><%= link_to brand.name, brand_path(brand) %></h2>
+                <%= image_tag brand.img, class: 'brand-logo' %>
+            </div>
+        </div>
+    <%end%>
+</div>

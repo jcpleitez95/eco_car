@@ -9,11 +9,12 @@
 
 <br>
 
-
-<% if @current_user.favorites.find {|f| f.model_id == @model.id} %>
-    <p> This model is in your favorites 100 </p>
-<% else %>
-    <%= button_to "Add to My Favorites", add_favorite_path(@model), method: :put, class: "btn btn-info" %>
+<% if !(@current_user == nil) %>
+    <% if @current_user.favorites.find {|f| f.model_id == @model.id} %>
+        <p> This model is in your favorites 💯 </p>
+    <% else %>
+        <%= button_to "Add to My Favorites", add_favorite_path(@model), method: :put, class: "btn btn-info" %>
+    <%end%>
 <%end%>
 
 <!-- button_to "Add to My Favorites", new_favorite_path, redirect_to model_path(@model) -->

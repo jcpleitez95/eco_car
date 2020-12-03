@@ -17,13 +17,29 @@ response = Net::HTTP.get(uri)
 # puts response
 
 # Car DB Setup
-car_brands = ["Tesla", "Honda", "Toyota", "Ford", 
-            "Chevrolet", "Dodge", "Mazda", "Porsche", 
-            "Ferrari", "Lamborghini", "Subaru", "Jeep", 
-            "Nissan", "BMW", "Fiat", "Bugatti"].sort
+car_brands = ["Tesla", "Honda", "Toyota", "Ford", "Chevrolet", "Dodge", "Mazda", "Porsche", 
+"Ferrari", "Lamborghini", "Subaru", "Jeep", "Nissan", "BMW", "Fiat", "Bugatti"].sort
+
+brand_logo = {"Tesla" => 'https://download.logo.wine/logo/Tesla%2C_Inc./Tesla%2C_Inc.-Logo.wine.png', 
+"Honda" => 'https://www.carlogos.org/car-logos/honda-logo-2100x1400.png', 
+"Toyota" => 'https://logos-world.net/wp-content/uploads/2020/04/Toyota-Emblem.png', 
+"Ford" => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/1280px-Ford_logo_flat.svg.png', 
+"Chevrolet" => 'https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png', 
+"Dodge" => 'https://i.pinimg.com/originals/fc/e3/bd/fce3bd240da89d7263c426fa99e5f316.png', 
+"Mazda" => 'https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo-1997-2015.png', 
+"Porsche" => 'https://www.car-logos.org/wp-content/uploads/2011/09/porsche.png', 
+"Ferrari" => 'https://www.carlogos.org/car-logos/scuderia-ferrari-logo-800x1050.png', 
+"Lamborghini" => 'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png', 
+"Subaru" => 'https://i.pinimg.com/originals/a8/68/9b/a8689bec0f5e1cea21d4ce3d69cab172.png', 
+"Jeep" => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jeep_logo.svg/1024px-Jeep_logo.svg.png', 
+"Nissan" => 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nissan-logo.svg/697px-Nissan-logo.svg.png', 
+"BMW" => 'https://www.carlogos.org/car-logos/bmw-logo-2020-grey.png', 
+"Fiat" => 'https://www.carlogos.org/car-logos/fiat-logo.png', 
+"Bugatti" => 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bugatti_logo.svg/1200px-Bugatti_logo.svg.png'
+}
 
 car_brands.each do |brand|
-    Brand.create(name: brand)
+    Brand.create(name: brand, img: brand_logo[brand])
 end
 
 # Vehicle Type DB Setup

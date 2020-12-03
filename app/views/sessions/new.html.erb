@@ -1,3 +1,9 @@
+<div class="video-wrapper">
+  <%= video_tag 'driving.mp4', autoplay: :autoplay, loop: :loop, muted: :muted, class: "my_video" %>
+</div>
+
+<!-- image_tag 'Eco-Car.png' -->
+
 <div class="form-container">
 
     <% if flash[:errors] %>
@@ -15,7 +21,7 @@
         <%= f.text_field :password %>
     </div>
 
-    <%= f.submit class: "form-btn" %>
+    <%= f.submit "Log In", class: "form-btn" %>
+    
   <% end %>
-
-</div>
+  </body>

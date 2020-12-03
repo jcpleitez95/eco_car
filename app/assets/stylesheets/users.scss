@@ -1,3 +1,59 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: yellow;
+}
+.my_video {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+
+.form-container {
+    text-align: center;
+    background-color: green;
+    line-height: 50px;
+    width: 35%;
+    margin: 100px auto;
+    border-radius: 25px;
+}
+
+.form-input {
+    font-size: smaller;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: yellow;
+    text-transform: uppercase;
+}
+
+.form-btn {   
+    text-align: center; 
+    margin: 0px auto;
+    display: block;
+    position: center;
+    padding: 4px 3em;
+    appearance: none;
+    border: 1px solid black;
+    border-radius: 25px;
+    background: transparent;
+    color: yellow;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    font-weight: bold;
+}
+
+.form-btn:hover {
+    background-color: yellowgreen;
+    color: brown;
+    transition: 1s;
+}

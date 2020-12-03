@@ -12,8 +12,23 @@
   <body>
 
     <div class="banner">
-      <%# image_tag "cats_tinder.gif", class: "banner-img" %>
-      <h1 id="banner-header">EcoCar</h1>
+      <%= image_tag "ecocar.png", class: "banner-img" %>
+
+        <div class="bird-container bird-container-one">
+          <div class="bird bird-one"></div>
+        </div>
+        
+        <div class="bird-container bird-container-two">
+          <div class="bird bird-two"></div>
+        </div>
+        
+        <div class="bird-container bird-container-three">
+          <div class="bird bird-three"></div>
+        </div>
+        
+        <div class="bird-container bird-container-four">
+          <div class="bird bird-four"></div>
+        </div>
     </div>
 
     <ul class="nav">
@@ -21,9 +36,8 @@
 
       <% if @current_user %>
         <li class="left"><%= link_to "My Favorites", favorites_path %></li>
-        <li class="right"><%= link_to "My Profile", user_path(@current_user) %></li>
+        <li class="left"><%= link_to "My Profile", user_path(@current_user) %></li>
         <li class="right"><%= link_to "Logout", logout_path, method: :delete  %></li>
-        <li class="right">Welcome <%= @current_user.username %></li>
       <% else %>
         <li class="right"><%= link_to "Sign Up", new_user_path %></li>
         <li class="right"><%= link_to "Login", new_login_path %></li>
