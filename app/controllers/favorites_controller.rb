@@ -20,6 +20,13 @@ class FavoritesController < ApplicationController
         redirect_to model_path(@model)
     end
 
+    def remove_fav_model
+        @favorite = Favorite.find(params[:id])
+        @model = @favorite.model
+        @favorite.destroy
+        redirect_to model_path(@model)
+    end
+
     private
 
     def favorite_params

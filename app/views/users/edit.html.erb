@@ -1,19 +1,19 @@
-<h1>Edit User!!</h1>
-
+<div class="form-container">
 <%= form_for @user do |f| %>
+    <div id="welcome">Edit User</div>
     <% if flash[:my_errors] %>
         <% flash[:my_errors].each do |error| %>
         <li><%= error %></li>
         <% end%>
     <% end %>
-
+    <div class="form-input">
     <%= f.label :username %>
     <%= f.text_field :username %>
-    <br>
-    <br>
+    </div>
+    <div class="form-input">
     <%= f.label :password %>
     <%= f.text_field :password %>
-    <br>
-    <br>
-    <%= f.submit %>
+    </div>
+    <%= f.submit "Update", class: "form-btn" %>
 <% end %>
+</div>

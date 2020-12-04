@@ -1,21 +1,39 @@
-<h1><%= @model.name %> Overview</h1>
-<h4><%= @model.vehicle_type.name %></h4>
 
-<li>This model will cost you: <%= number_to_currency(@model.price, precision: 0) %></li>
+<div class='top-block'>
 
-<br>
+    <h1>2020 <%= @model.brand.name %> <%= @model.name %></h1>
 
-<li>This model has an EcoScore of <%= @model.eco_score %></li>
+    <div class='fav'>
+        <% if !(@current_user == nil) %>
+            <% if @current_user.favorites.find {|f| f.model_id == @model.id} %>
+                <% f = @current_user.favorites.find {|f| f.model_id == @model.id} %>
+                <%= button_to "Remove from Your Favorites", remove_favorite_model_path(f), method: :delete, class: "delete-btn" %>
+            <% else %>
+                <%= button_to "Add to Your Favorites", add_favorite_path(@model), method: :put, class: 'fav-btn' %>
+            <%end%>
+        <%end%>
+    </div>
 
-<br>
+    <%= image_tag('https://www.tesla.com/assets/img/ms_fb_s.jpg', class: 'car-img') %>
 
-<% if !(@current_user == nil) %>
-    <% if @current_user.favorites.find {|f| f.model_id == @model.id} %>
-        <p> This model is in your favorites 💯 </p>
-    <% else %>
-        <%= button_to "Add to My Favorites", add_favorite_path(@model), method: :put, class: "btn btn-info" %>
-    <%end%>
-<%end%>
+</div>
+
+<div class ='middle-block'>
+
+    <h2>Car Details</h2>
+
+    <br>
+
+    <p class="vehicle-type">Vehicle Type: <%= @model.vehicle_type.name %></p>
+    
+    <p class="vehicle-cost">Price: <%= number_to_currency(@model.price, precision: 0) %></p>
+    
+    <p class="vehicle-brand">Brand: <%= @model.brand.name %></p>
+    
+    <p class="vehicle-ecoscore">This model has an EcoScore of <%= @model.eco_score %></p>
+
+</div>
+
 
 <!-- button_to "Add to My Favorites", new_favorite_path, redirect_to model_path(@model) -->
 

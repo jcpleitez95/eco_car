@@ -1,3 +1,122 @@
-// Place all the styles related to the Models controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Model Show Page CSS
+
+/* 
+color palette:
+.color1 {color: #1abf36;} green
+.color2 {color: #ffee43;} yellow
+.color3 {color: #062108;} black
+.color4 {color: #747874;} dark grey
+.color5 {color: #e2e2e2;} light grey 
+*/ 
+
+.top-block {
+    display: flex;
+    background-color: #e2e2e2;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.top-block h1 {
+    text-align: left;
+    padding-left: 10px;
+    color: #062108;
+    border: none;
+    background: none;
+}
+
+.fav-btn {
+    position: absolute;
+    right: 0;
+    margin: 15px 15px;
+    display: inline;
+    position: center;
+    padding: 15px 32px;
+    appearance: none;
+    border: none;
+    border-radius: 25px;
+    background: #1abf36;
+    color:  white;
+    font-weight: bold;
+}
+
+.fav-btn:hover {
+    border: 2px solid #062108;
+    color: #ffee43
+}
+
+.fav .delete-btn {
+    position: absolute;
+    right: 0;
+    margin: 18px ;
+    display: inline;
+    position: center;
+    padding: 15px 32px;
+    appearance: none;
+    border: none;
+    border-radius: 25px;
+    background: #1abf36;
+    color:  white;
+    font-weight: bold;
+}
+
+.fav .delete-btn:hover {
+    border: 2px solid #062108;
+    color: #ffee43
+}
+
+.car-img {
+    display: block;
+    position: center;
+    text-align: center;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: 25%;
+    margin-bottom: 15px;
+    width: 50%;
+}
+
+.middle-block {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #e2e2e2;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.middle-block h2 {
+    text-align: left;
+    flex: 0 0 100%;
+    padding-left: 10px;
+    color: #062108;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.vehicle-type {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    text-align: left;
+    padding-left: 60px;
+    flex: 1 0 45%;
+}
+
+.vehicle-cost {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    text-align: right;
+    padding-right: 60px;
+    // flex: 0 0 45%;
+}
+
+.vehicle-brand {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    text-align: right;
+    padding-left: 60px;
+    flex: 1 0 45%;
+}

@@ -1,12 +1,13 @@
 <h1>Your Favorites</h1>
 
+<div class ="profile-block">
+<div class = "favorite-container">
 <% @favorites.each do |favorite| %>
-    <li><%= link_to favorite.model.name, model_path(favorite.model) %>
-    <br>
-    <%= button_to "Delete Favorite", favorite_path(favorite), method: :delete %>
-    </li>
-<% end %>
+    <div class="favorite-tile">
+    <%= link_to favorite.model.name, model_path(favorite.model) %>
+    <%= button_to "Remove", favorite_path(favorite), method: :delete, class: "fav-delete-btn" %>
+    </div>
 
-<!-- #form_for @favorites do |f| 
-    #f.collection_select :favorite_id, @favorites, :id, :name, prompt: true
-#end -->
+<% end %>
+</div>
+</div>

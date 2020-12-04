@@ -1,26 +1,19 @@
 <h1>Account Overview</h1>
 
-<p>Username:<%= @user.username %></p>
+<div class="profile-block">
+<p class="username">Username: <%= @user.username %></p>
 
-<p>You have <%= @user.favorites.count %> favorited cars</p>
+<p class="num-of-cars">You have <%= @user.favorites.count %> favorited cars</p>
 <% avg_eco_score = 0 if @user.favorites.count == 0 %>
 <% avg_eco_score = (@user.models.sum {|m| m.eco_score} / @user.favorites.count) if  @user.favorites.count > 0%>
-<li> The average EcoScore of your favorites is <%= avg_eco_score.to_f.round(2) %></li>
-<br>
-<%= button_to "My Favorites", favorites_path, method: :get%>
+<p class="eco-score"> The average EcoScore of your favorites is <%= avg_eco_score.to_f.round(2) %><p>
 
-<br>
+<%= button_to "My Favorites", favorites_path, method: :get, class: "profile-btn"%>
+<%= button_to "Update Profile", edit_user_path(@user), method: :get, class: "profile-btn"%>
+<%= button_to "Logout", "/sessions/logout", method: :delete, class: "profile-btn"%>
 
-<h2> Change your password </h2>
-<!-- form -->
 
-<br>
-
-<h2> Logout </h2>
-<%= button_to "Logout", "/sessions/logout", method: :delete %>
-
-<!-- use coookies to count delete button -->
-<h2>Danger zone</h2>
-<p> Click this button 3 times to delete your account </p>
-<%= button_to "Delete My Account", user_path(@user), method: :delete %>
-
+<h2 class="danger-zone">Danger Zone</h2>
+<p class="info"> Click this button 3 times to delete your account </p>
+<%= button_to "Delete My Account", user_path(@user), method: :delete, class: "profile-btn"%>
+</div>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/sessions/login', to: 'sessions#login', as: 'login'
   # post "model/:id/add", to: 'models#add_favorite', as: 'add_favorite'  
   put "favorites/:id/add", to: 'favorites#add', as: 'add_favorite'  
+  delete '/favorites/:id/remove', to: 'favorites#remove_fav_model', as: 'remove_favorite_model'
 
 
 end

@@ -14,14 +14,23 @@
  *= require_self
  */
 
+ /* .color1 {color: #1abf36;} green
+.color2 {color: #ffee43;} yellow
+.color3 {color: #062108;} black
+.color4 {color: #747874;} dark grey
+.color5 {color: #e2e2e2;} light grey */ 
+
  body {
   width: 100%;
   overflow-x: hidden;
+  background: url("forest.jpg") no-repeat center center fixed;
+  background-size: cover;
  }
 
  .nav {
     max-width: 100%;
     margin: 0px auto;
+    margin-right: 10px;
     height: 40px;
     line-height: 40px;
     background-color: #1abf36;
@@ -47,8 +56,8 @@
     font-weight: 600;
   }
 
-  .nav li:hover {
-    background-color:#c5c4c4;
+  .nav li:hover a {
+    color:#ffee43;
     transition: 1s;
     border-radius: 10px;
   }
@@ -58,8 +67,9 @@
     line-height: 200px;
     text-align: center;
     width: 100%;
-    background-color: #ededed;
+    background-color: #e2e2e2;
     margin: 0px auto;
+    margin-right: 10px;
   }
 
   .banner-img {

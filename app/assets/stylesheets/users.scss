@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-h1 {
+#welcome {
+    font-size: xx-large;
+    font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: yellow;
+    color:  #ffee43;
 }
 .my_video {
     position: absolute;
@@ -32,7 +34,7 @@ h1 {
     font-size: smaller;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: yellow;
+    color:  #ffee43;
     text-transform: uppercase;
 }
 
@@ -46,7 +48,7 @@ h1 {
     border: 1px solid black;
     border-radius: 25px;
     background: transparent;
-    color: yellow;
+    color:  #ffee43;
     text-transform: uppercase;
     letter-spacing: .25em;
     font-weight: bold;
@@ -56,4 +58,73 @@ h1 {
     background-color: yellowgreen;
     color: brown;
     transition: 1s;
+}
+
+h1 {
+    background-color: rgba(116, 120, 116, .9);
+    border: 2px solid black;
+    color:   #ffee43;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.profile-block {
+    background-color: rgba(26, 191, 54, .9);
+    border: 1px solid black;
+}
+
+.username {
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    padding: 0px 5px;
+}
+
+.num-of-cars {
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0px 5px;
+}
+
+.eco-score {
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0px 5px;
+}
+
+
+.profile-btn {   
+    text-align: center; 
+    margin: 5px 5px;
+    display: inline;
+    position: center;
+    padding: 4px 3em;
+    appearance: none;
+    border: 1px solid black;
+    border-radius: 25px;
+    background: transparent;
+    color:  white;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    font-weight: bold;
+}
+
+.profile-btn:hover {
+    background-color: yellowgreen;
+    color: brown;
+    transition: .5s;
+}
+
+.danger-zone {
+    color: rgb(226, 13, 13);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0px 5px;
+}
+
+.info {
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0px 5px;
 }

@@ -1,10 +1,18 @@
 
+
+
+
+
+
+
+
+
 <div class='index-container'>
     <% @brands.each do |brand| %>
         <div class='index-tile'>
             <div class='outer-circle'>
                 <h2><%= link_to brand.name, brand_path(brand) %></h2>
-                <%= image_tag brand.img, class: 'brand-logo' %>
+                <%= link_to image_tag(brand.img, class: 'brand-logo'), brand_path(brand) %>
             </div>
         </div>
     <%end%>
