@@ -14,7 +14,27 @@
         <%end%>
     </div>
 
-    <%= image_tag('https://www.tesla.com/assets/img/ms_fb_s.jpg', class: 'car-img') %>
+    <% if  @model.name == 'Chiron' %>
+        <%= image_tag('https://i.pinimg.com/originals/e9/34/ac/e934ac022c9ecf2dadf6954610176627.png', class: 'car-img') %>
+    <% elsif @model.name == 'Model S' %>
+        <%= image_tag('https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_low/v1/editorial/vhs/Tesla-Model-S.png', class: 'car-img') %>
+    <% elsif @model.name == 'Model Y' %>
+        <%= image_tag('https://www.cstatic-images.com/car-pictures/xl/usd00tss021a021001.png', class: 'car-img') %>
+    <% elsif @model.name == 'Model X' %>
+        <%= image_tag('https://www.motortrend.com/uploads/sites/5/2020/06/2020-tesla-model-x-2.png?fit=around%7C875:492.1875', class: 'car-img') %>
+    <% elsif @model.name == '328i' %>
+        <%= image_tag('https://www.bmwusa.com/content/dam/bmwusa/3Series/2021/BMW-MY21-3Series-330i-Overview-MakeItYours.png.bmwimg.small.png', class: 'car-img') %>
+    <% elsif @model.name == 'CLARITY ELECTRIC' %>
+        <%= image_tag('https://assets-clean.local-car-finder.com/images/14305/14305_st1280_089.png', class: 'car-img') %>
+   <% elsif @model.name == 'Bolt EV' %>
+        <%= image_tag('https://di-uploads-pod1.dealerinspire.com/chevyofnaperville/uploads/2018/11/2019-Chevrolet-Bolt-Header.png', class: 'car-img') %>
+    <% elsif @model.name == 'Model 3' %>
+        <%= image_tag('https://miro.medium.com/max/3320/1*RfE1My8XWvp_r6Mv9wTbbA.png', class: 'car-img') %>
+    <% elsif @model.name == 'i3' %>
+        <%= image_tag('https://static.tcimg.net/vehicles/primary/3f2fe612baa6a427/2020-BMW-i3-white-full_color-driver_side_front_quarter.png', class: 'car-img') %>
+    <% else %>
+        <%= image_tag('https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_low/v1/editorial/vhs/Tesla-Model-S.png', class: 'car-img') %>
+    <%end%>
 
 </div>
 
@@ -22,21 +42,31 @@
 
     <h2>Car Details</h2>
 
-    <br>
-
-    <p class="vehicle-type">Vehicle Type: <%= @model.vehicle_type.name %></p>
+    <p>Vehicle Type: <%= @model.vehicle_type.name %></p>
     
-    <p class="vehicle-cost">Price: <%= number_to_currency(@model.price, precision: 0) %></p>
+    <p>Price: <%= number_to_currency(@model.price, precision: 0) %></p>
     
-    <p class="vehicle-brand">Brand: <%= @model.brand.name %></p>
+    <p>Brand: <%= @model.brand.name %></p>
     
-    <p class="vehicle-ecoscore">This model has an EcoScore of <%= @model.eco_score %></p>
+    <p>This model has an EcoScore of <%= @model.eco_score %></p>
 
 </div>
 
+<% comps_array = @model.find_comps %>
+<% if @model.eco_score < 10 && comps_array != nil %>
 
-<!-- button_to "Add to My Favorites", new_favorite_path, redirect_to model_path(@model) -->
+    <div class ='bottom-block'>
 
-<br>
+        <h2>Here are some comparable cars with higher EcoScores: </h2>
 
-<li> Here are some comparable cars that are even better for the environment: </li>
+        <div class='index-container'>
+            <% comps_array.each do |comp|%>
+                <div class='index-tile'>
+                    <h4><%=  link_to (comp.brand.name + ' ' + comp.name),  model_path(comp) %></h4>
+                    <p>Price: <%= number_to_currency(comp.price, precision: 0) %></p>
+                    <p>EcoScore: <%= comp.eco_score%></p>
+                </div>
+            <%end%>
+        </div>
+    </div>
+<%end%>

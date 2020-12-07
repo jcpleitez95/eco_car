@@ -21,7 +21,7 @@ car_brands = ["Tesla", "Honda", "Toyota", "Ford", "Chevrolet", "Dodge", "Mazda",
 "Ferrari", "Lamborghini", "Subaru", "Jeep", "Nissan", "BMW", "Fiat", "Bugatti"].sort
 
 brand_logo = {"Tesla" => 'https://i.pinimg.com/originals/43/e9/69/43e969979dfd8ae4b364f517571aee58.png', 
-"Honda" => 'https://assets.stickpng.com/thumbs/580b585b2edbce24c47b2c73.png', 
+"Honda" => 'https://cdn.freelogovectors.net/wp-content/uploads/2018/03/honda-logo.png', 
 "Toyota" => 'https://i.pinimg.com/originals/13/ab/5f/13ab5fe6c536ff7125432ece35b8b217.png', 
 "Ford" => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/1280px-Ford_logo_flat.svg.png', 
 "Chevrolet" => 'https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png', 

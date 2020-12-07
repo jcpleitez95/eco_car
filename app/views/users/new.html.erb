@@ -1,6 +1,6 @@
 
 <div class="video-wrapper">
-  <%= video_tag 'driving.mp4', autoplay: :autoplay, loop: :loop, muted: :muted, class: "my_video" %>
+  <%= video_tag 'driving-2.mp4', autoplay: :autoplay, loop: :loop, muted: :muted, class: "my_video" %>
 </div>
 <div class="form-container">
 <%= form_for @user do |f| %>
@@ -16,7 +16,7 @@
     </div>
     <div class="form-input">
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
     </div>
     <%= f.submit "Sign Up", class: "form-btn"%>
 <% end %>

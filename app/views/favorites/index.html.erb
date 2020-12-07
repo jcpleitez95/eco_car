@@ -1,13 +1,17 @@
-<h1>Your Favorites</h1>
+<div class="favorite-banner">
+    <p class="favorite-header">Your Favorites</p>
+    <% avg_eco_score = 0 if @current_user.favorites.count == 0 %>
+    <% avg_eco_score = (@current_user.models.sum {|m| m.eco_score} / @current_user.favorites.count) if  @current_user.favorites.count > 0%>
+    <p class="favorite-info">The average EcoScore of your favorites is <%= avg_eco_score.to_f.round(2) %></p>
+</div>
 
-<div class ="profile-block">
 <div class = "favorite-container">
 <% @favorites.each do |favorite| %>
     <div class="favorite-tile">
     <%= link_to favorite.model.name, model_path(favorite.model) %>
+    <p class="fav-price"><%= number_to_currency(favorite.model.price, precision: 0) %></p>
     <%= button_to "Remove", favorite_path(favorite), method: :delete, class: "fav-delete-btn" %>
     </div>
-
 <% end %>
 </div>
-</div>
+

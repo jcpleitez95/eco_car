@@ -9,6 +9,11 @@ class ModelsController < ApplicationController
     def show
     end
 
+    def get_comps # custom route 
+        @model = Model.find(params[:id])
+        ouput_array = find_comps(@model)
+    end
+
     private 
 
     def get_model

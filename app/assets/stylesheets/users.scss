@@ -28,6 +28,7 @@
     width: 35%;
     margin: 100px auto;
     border-radius: 25px;
+    padding: 0 0 10px;
 }
 
 .form-input {
@@ -71,7 +72,7 @@ h1 {
 }
 
 .profile-block {
-    background-color: rgba(26, 191, 54, .9);
+    background-color: #e2e2e2;
     border: 1px solid black;
 }
 
@@ -104,7 +105,7 @@ h1 {
     appearance: none;
     border: 1px solid black;
     border-radius: 25px;
-    background: transparent;
+    background-color: #1abf36;
     color:  white;
     text-transform: uppercase;
     letter-spacing: .25em;
@@ -112,8 +113,8 @@ h1 {
 }
 
 .profile-btn:hover {
-    background-color: yellowgreen;
-    color: brown;
+    background-color: black;
+    color: #1abf36;
     transition: .5s;
 }
 
