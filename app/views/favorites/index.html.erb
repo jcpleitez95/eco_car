@@ -8,7 +8,7 @@
 <div class = "favorite-container">
 <% @favorites.each do |favorite| %>
     <div class="favorite-tile">
-    <%= link_to favorite.model.name, model_path(favorite.model) %>
+    <%= link_to (favorite.model.brand.name + " " + favorite.model.name), model_path(favorite.model) %>
     <p class="fav-price"><%= number_to_currency(favorite.model.price, precision: 0) %></p>
     <%= button_to "Remove", favorite_path(favorite), method: :delete, class: "fav-delete-btn" %>
     </div>
